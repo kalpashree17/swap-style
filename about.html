@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap&Style - About Us</title>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --primary-white: #ffffff;
+            --light-gray: #f2f2f2;
+            --accent-pink: #ffafcc;
+            --accent-mint: #a7f0ba;
+            --accent-lavender: #cbb2fe;
+            --border-radius: 12px;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            --transition-speed: 0.3s;
+        }
+
+        /* Basic Resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-black);
+            background-color: var(--primary-white);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-black);
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: var(--accent-pink);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-pink);
+            transform: translateY(-2px);
+        }
+
+        /* Navbar */
+        #navbar {
+            background-color: var(--primary-white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        #navbar .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        #navbar .nav-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        #navbar .nav-icons i {
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: color var(--transition-speed) ease;
+        }
+
+        #navbar .nav-icons i:hover {
+            color: var(--accent-mint);
+        }
+
+        /* About Page Specific Styles */
+        #about-page {
+            padding: 3rem 0;
+        }
+
+        #about-page h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-size: 2.5rem;
+        }
+
+        .about-section {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-lavender);
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background-color: var(--primary-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem auto;
+            border: 3px solid var(--accent-mint);
+        }
+
+        .team-member h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        footer .social-links a {
+            color: var(--primary-white);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        footer .social-links a:hover {
+            color: var(--accent-mint);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #navbar .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #navbar .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            #navbar .nav-icons {
+                margin-top: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <nav class="container">
+            <a href="index.html" class="logo">Swap&Style</a>
+            <div class="nav-links">
+                <a href="index.html">Shop</a>
+                <a href="categories.html">Categories</a>
+                <a href="#">Sell</a>
+                <a href="about.html">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <input type="text" placeholder="Search..." class="search-input">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-page" class="container">
+            <h2>About Swap&Style</h2>
+
+            <div class="about-section">
+                <h3>Our Mission</h3>
+                <p>At Thrift Sathi, our mission is to revolutionize the way people think about fashion and home décor by promoting sustainable consumption through high-quality, pre-loved items. We believe in extending the lifecycle of products, reducing waste, and making unique style accessible to everyone.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>Our Story</h3>
+                <p>Founded in 2024 by a group of sustainability enthusiasts, Thrift Sathi began as a small online community dedicated to sharing and trading pre-owned treasures. What started as a passion project quickly grew into a vibrant marketplace, driven by the belief that fashion can be both stylish and eco-conscious. We're proud to offer a curated selection that helps our customers express their individuality while contributing to a healthier planet.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Sustainability:</strong> Prioritizing environmental responsibility in every aspect of our operations.</li>
+                    <li><strong>Community:</strong> Fostering a supportive and engaging platform for thrift lovers.</li>
+                    <li><strong>Quality:</strong> Ensuring all items meet our standards for condition and appeal.</li>
+                    <li><strong>Affordability:</strong> Making unique, stylish finds accessible to a wider audience.</li>
+                    <li><strong>Transparency:</strong> Being open about our processes and impact.</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h3>Meet the Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/120?text=Jane+Doe" alt="Jane Doe">
+                        <h4>Jane Doe</h4>
+                        <p>Founder & CEO</p>
+                        <p><small>Passionate about vintage fashion and circular economy.</small></p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/120?text=John+Smith" alt="John Smith">
+                        <h4>John Smith</h4>
+                        <p>Head of Curation</p>
+                        <p><small>Expert in discovering unique and high-quality items.</small></p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/120?text=Emily+Chen" alt="Emily Chen">
+                        <h4>Emily Chen</h4>
+                        <p>Community Manager</p>
+                        <p><small>Building connections and fostering a vibrant thrift community.</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3>Our Sustainability Impact</h3>
+                <p>We are committed to making a tangible difference. Every item rehomed through Thrift Sathi helps reduce textile waste, conserve water, and lower carbon emissions. We track our collective impact and share it with our community to celebrate our progress together.</p>
+                <button>See Our Impact</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Swap&Style. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const seeImpactBtn = document.querySelector('#about-page .about-section button');
+            if (seeImpactBtn) {
+                seeImpactBtn.addEventListener('click', () => {
+                    window.location.href = 'index.html#sustainability';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
